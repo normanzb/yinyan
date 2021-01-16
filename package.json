@@ -1,0 +1,42 @@
+{
+  "name": "template",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "scripts/test",
+    "test-watch": "npm run test -- --watch",
+    "lint": "eslint  --ext .jsx --ext .js ./src/",
+    "lint-fix": "eslint  --ext .jsx --ext .js --fix ./src/",
+    "preversion": "npm i && npm run build",
+    "postversion": "push-current-branch-and-latest-tag"
+  },
+  "author": "Hongyu Xu",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/register": "^7.11.5",
+    "@svgr/parcel-plugin-svgr": "^5.4.0",
+    "chai": "^4.2.0",
+    "debug": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-normanzb-base": "^1.0.3",
+    "eslint-plugin-react": "^7.21.2",
+    "husky": "^4.3.0",
+    "less": "^3.12.2",
+    "mocha": "^7.2.0",
+    "normanzb-build-scripts": "^0.0.5",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}
