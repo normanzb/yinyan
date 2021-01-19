@@ -1,11 +1,11 @@
 {
-  presets: [
+  "presets": [
     [
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
-        modules: 'auto'
+        "modules": "auto"
       }
     ],
-    '@babel/preset-react'
+    "@babel/preset-react"
   ]
 }
