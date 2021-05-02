@@ -1,13 +1,22 @@
 @import url('../../config.less');
 
+@padding-v: unit(.8);
+@height: unit(1.6);
+
 .nav {
-  border-bottom: unit(.1) solid #000;
-  padding: unit(.8) unit(1.4);
-  height: unit(1.6);
+  padding: @padding-v unit(1.4);
+  height: @height;
+  width: 100%;
+  position: fixed;
+  background: #FFF;
 
   > .logo {
     height: 100%;
     position: relative;
-    top: -20%;
+    // top: -20%;
   }
+}
+
+.nav-placeholder {
+  height: @height + @padding-v * 2;
 }

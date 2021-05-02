@@ -1,0 +1,21 @@
+@import url('../../config.less');
+
+.song {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: unit(.4) unit(.8);
+  box-sizing: border-box;
+}
+
+.song > div {
+	padding: 0 unit(.8);
+}
+
+.song > .title {
+	width: 20%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
