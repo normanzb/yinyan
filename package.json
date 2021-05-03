@@ -44,7 +44,9 @@
   },
   "dependencies": {
     "eventemitter3": "^4.0.7",
+    "js-base64": "^3.6.0",
     "never": "^1.0.2",
+    "react-player": "^2.9.0",
     "react-router-dom": "^5.2.0",
     "react-virtualized-auto-sizer": "^1.0.5",
     "react-window": "^1.8.6"

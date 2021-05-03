@@ -11,6 +11,7 @@ export default ({ playlist }) => {
   if (!playlist) {
     return null
   }
+  const songs = playlist.songs
 
   return (
     <div className='list'>
@@ -18,12 +19,12 @@ export default ({ playlist }) => {
         {({ height, width}) => (
           <FixedSizeList
             height={height} width={width}
-            itemCount={playlist.songs.length}
+            itemCount={songs.length}
             itemSize={Song.HEIGHT}
           >
             {({index, style}) => {
-              const song = playlist.songs[index]
-              return <Song key={index} song={song} style={style} />
+              const song = songs[index]
+              return <Song key={index} odd={index % 2 === 1} song={song} style={style} />
             }}
           </FixedSizeList>
         )}

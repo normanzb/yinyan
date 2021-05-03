@@ -7,12 +7,29 @@
   justify-content: flex-start;
   padding: unit(.4) unit(.8);
   box-sizing: border-box;
+  text-decoration: none;
+  color: #000;
+}
+
+.song.odd {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.song:hover {
+	background-color: rgba(0, 0, 0, 0.1);	
 }
 
 .song > div {
-	padding: 0 unit(.8);
+	margin: 0 unit(.8);
 }
 
+.song > .cover {
+	width: unit(2.5);
+	height: unit(2.5);
+	margin: unit(.5);
+	border-radius: unit(.3);
+	background-size: cover;
+}
 .song > .title {
 	width: 20%;
 	text-overflow: ellipsis;

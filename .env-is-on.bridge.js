@@ -1,10 +1,10 @@
 module.exports = [{
   from: {
     host: 'music.norm.im',
-    pathname: /^\/socket\.io\/.*/,
+    pathname: /(.*)/,
   },
   to: {
-    pathname: '/socket.io/',
+    pathname: '$1',
     protocol: 'https:',
     host: 'music.norm.im',
     port: 443
@@ -12,7 +12,7 @@ module.exports = [{
 }, {
   from: {
     host: 'music.norm.im',
-    pathname: /^\/(?!socket\.io\/)/,
+    pathname: /^\/(?!socket\.io|cover\/)/,
   },
   to: {
     pathname: '/',

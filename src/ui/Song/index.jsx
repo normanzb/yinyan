@@ -1,19 +1,28 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import './styles.less'
-import reactifyRichModel from '../../reactifyRichModel'
+import useReactifyRichModel from '../../useReactifyRichModel'
 import { getUnitInPx } from '../../config'
+import { Link } from "react-router-dom";
 
-const Song = React.memo(({ song, style }) => {
-  const renderable = useMemo(() => reactifyRichModel(song), [song])
+const Song = React.memo(({ song, style, odd }) => {
+  const renderable = useReactifyRichModel(song)
 
   if (!song) {
     return null
   }
 
-  return <div className='song' style={style}>
-    <div className='title'>{renderable.title}</div>
-    <div>{renderable.displayArtist}</div>
-  </div>
+  const coverLocation = (renderable.coverLocation + '') ? '/cover/' + renderable.coverLocation : ''
+
+  return (
+    <Link to={"/song/" + song.id} className={['song', odd ? 'odd' : ''].join(' ')} style={style}>
+      <div className='cover' style={{
+        backgroundImage: `url(${encodeURI(coverLocation)})`
+      }}>
+      </div>
+      <div className='title'>{renderable.title}</div>
+      <div>{renderable.displayArtist}</div>
+    </Link>
+  )
 })
 
 Object.defineProperty(Song, 'HEIGHT', {

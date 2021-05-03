@@ -13,7 +13,9 @@ import List from './ui/List';
 const config = {
   api: {
     host: window.location.host,
-    pathname: window.location.pathname + 'socket.io'
+    // To make history push state work, we need to hard code the path to /
+    // pathname: window.location.pathname + 'socket.io'
+    pathname: '/socket.io'
   }
 }
 
@@ -31,9 +33,16 @@ export default () => {
     <Nav />
     <div className='content'>
       <Switch>
-          <Route>
-            <List playlist={currentPlaylist} />
-          </Route>
+        <Route>
+          <List playlist={currentPlaylist} />
+        </Route>
+      </Switch>
+      <Switch>
+        <Route path="/song/:songId">
+          <div>
+            song details 
+          </div>
+        </Route>
       </Switch>
     </div>
   </Router>
